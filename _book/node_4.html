@@ -1,0 +1,510 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>socket.io构建WebSocket服务 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="client.html" />
+    
+    
+    <link rel="prev" href="node_3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="me.html">
+            
+                <a href="me.html">
+            
+                    
+                    关于作者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    WebSocket介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="ws_wss.html">
+            
+                <a href="ws_wss.html">
+            
+                    
+                    ws/wss
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="server.html">
+            
+                <a href="server.html">
+            
+                    
+                    服务器端构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Node_Enr.html">
+            
+                <a href="Node_Enr.html">
+            
+                    
+                    Node服务器端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="node_1.html">
+            
+                <a href="node_1.html">
+            
+                    
+                    Node环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="node_2.html">
+            
+                <a href="node_2.html">
+            
+                    
+                    Node服务器端编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="node_3.html">
+            
+                <a href="node_3.html">
+            
+                    
+                    Node构建WebSocket服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.3.1" data-path="node_4.html">
+            
+                <a href="node_4.html">
+            
+                    
+                    socket.io构建WebSocket服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="client.html">
+            
+                <a href="client.html">
+            
+                    
+                    客户端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="client_io.html">
+            
+                <a href="client_io.html">
+            
+                    
+                    socket.io客户端编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="socket.io.apis.html">
+            
+                <a href="socket.io.apis.html">
+            
+                    
+                    Socket.IO API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >socket.io构建WebSocket服务</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="socketio">Socket.IO</h1>
+<p>Socket.io&#x662F;&#x76EE;&#x524D;&#x6700;&#x6D41;&#x884C;&#x7684;WebSocket&#x5B9E;&#x73B0;&#xFF0C;&#x5305;&#x62EC;&#x670D;&#x52A1;&#x5668;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x3002;&#x5B83;&#x4E0D;&#x4EC5;&#x7B80;&#x5316;&#x4E86;&#x63A5;&#x53E3;&#xFF0C;&#x4F7F;&#x5F97;&#x64CD;&#x4F5C;&#x66F4;&#x5BB9;&#x6613;&#xFF0C;&#x800C;&#x4E14;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x4E0D;&#x652F;&#x6301;WebSocket&#x7684;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x964D;&#x4E3A;Ajax&#x8FDE;&#x63A5;&#xFF0C;&#x6700;&#x5927;&#x9650;&#x5EA6;&#x5730;&#x4FDD;&#x8BC1;&#x4E86;&#x517C;&#x5BB9;&#x6027;&#x3002;&#x5B83;&#x7684;&#x76EE;&#x6807;&#x662F;&#x7EDF;&#x4E00;&#x901A;&#x4FE1;&#x673A;&#x5236;&#xFF0C;&#x4F7F;&#x5F97;&#x6240;&#x6709;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x90FD;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x3002;</p>
+<p>Socket.IO&#x8BBE;&#x8BA1;&#x7684;&#x76EE;&#x6807;&#x662F;&#x6784;&#x5EFA;&#x80FD;&#x591F;&#x5728;&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x826F;&#x597D;&#x8FD0;&#x884C;&#x7684;&#x5B9E;&#x65F6;&#x5E94;&#x7528;&#xFF0C;&#x5982;&#x5B9E;&#x65F6;&#x5206;&#x6790;&#x7CFB;&#x7EDF;&#x3001;&#x4E8C;&#x8FDB;&#x5236;&#x6D41;&#x6570;&#x636E;&#x5904;&#x7406;&#x5E94;&#x7528;&#x3001;&#x5728;&#x7EBF;&#x804A;&#x5929;&#x5BA4;&#x3001;&#x5728;&#x7EBF;&#x5BA2;&#x670D;&#x7CFB;&#x7EDF;&#x3001;&#x8BC4;&#x8BBA;&#x7CFB;&#x7EDF;&#x3001;WebIM&#x7B49;&#x3002;&#x76EE;&#x524D;&#xFF0C;Socket.IO&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x4E3B;&#x6D41;PC&#x6D4F;&#x89C8;&#x5668;(&#x5982;IE&#x3001;Safari&#x3001;Chrome&#x3001;Firefox&#x3001;Opera&#x7B49;)&#x548C;&#x79FB;&#x52A8;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#xFF08;iOS&#x5E73;&#x53F0;&#x4E0B;&#x7684;Safari&#x3001;Android&#x5E73;&#x53F0;&#x4E0B;&#x7684;&#x57FA;&#x4E8E;Webkit&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7B49;&#xFF09;&#x3002;</p>
+<p>Socket.IO&#x5DF2;&#x7ECF;&#x5177;&#x6709;&#x4F17;&#x591A;&#x5F3A;&#x5927;&#x529F;&#x80FD;&#x7684;&#x6A21;&#x5757;&#x548C;&#x6269;&#x5C55;API&#xFF0C;&#x5982;&#xFF08;session.socket.io)&#xFF08;http session&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;session&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#xFF09;&#x3001;socket.io-cookie&#xFF08;cookie&#x89E3;&#x6790;&#x4E2D;&#x95F4;&#x4EF6;&#xFF09;&#x3001;session-web-sockets&#xFF08;&#x4EE5;&#x5B89;&#x5168;&#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x9012;Session&#xFF09;&#x3001;socket-logger&#xFF08;JSON&#x683C;&#x5F0F;&#x7684;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;&#x5DE5;&#x5177;&#xFF09;&#x3001;websocket.MQ&#xFF08;&#x53EF;&#x9760;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF09;&#x3001;socket.io-mongo&#xFF08;&#x4F7F;&#x7528;MongoDB&#x7684;&#x9002;&#x914D;&#x5668;&#xFF09;&#x3001;socket.io-redis&#xFF08;Redis&#x7684;&#x9002;&#x914D;&#x5668;&#xFF09;&#x3001;socket.io-parser&#xFF08;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8BAF;&#x7684;&#x9ED8;&#x8BA4;&#x534F;&#x8BAE;&#x5B9E;&#x73B0;&#x6A21;&#x5757;&#xFF09;&#x7B49;&#x3002;</p>
+<p>Socket.IO&#x5B9E;&#x73B0;&#x4E86;&#x5B9E;&#x65F6;&#x3001;&#x53CC;&#x5411;&#x3001;&#x57FA;&#x4E8E;&#x4E8B;&#x4EF6;&#x7684;&#x901A;&#x8BAF;&#x673A;&#x5236;,&#x5B83;&#x89E3;&#x51B3;&#x4E86;&#x5B9E;&#x65F6;&#x7684;&#x901A;&#x4FE1;&#x95EE;&#x9898;&#xFF0C;&#x5E76;&#x7EDF;&#x4E00;&#x4E86;&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x3002;&#x542F;&#x52A8;&#x4E86;Socket&#x4EE5;&#x540E;&#xFF0C;&#x5C31;&#x50CF;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x6761;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x7BA1;&#x9053;&#xFF0C;&#x4E24;&#x8FB9;&#x53EF;&#x4EE5;&#x4E92;&#x901A;&#x6709;&#x65E0;&#x3002;&#x5B83;&#x8FD8;&#x80FD;&#x591F;&#x548C;Express.js&#x63D0;&#x4F9B;&#x7684;&#x4F20;&#x7EDF;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x5F88;&#x597D;&#x7684;&#x7ED3;&#x5408;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#x63D0;&#x4F9B;&#x4E24;&#x79CD;&#x8FDE;&#x63A5;&#x65B9;&#x5F0F;&#x3002;</p>
+<p><a href="https://socket.io/" target="_blank">Socket.IO &#x5B98;&#x7F51;</a></p>
+<h3 id="&#x5F00;&#x59CB;&#x7F16;&#x7A0B;">&#x5F00;&#x59CB;&#x7F16;&#x7A0B;</h3>
+<blockquote>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;<code>socket_server</code>&#xFF0C;&#x6253;&#x5F00;&#x63A7;&#x5236;&#x53F0;</p>
+</blockquote>
+<pre><code class="lang-bash">
+    <span class="hljs-built_in">cd</span> &#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;/socket_server
+    npm init
+</code></pre>
+<blockquote>
+<p>&#x4F7F;&#x7528;&#x7F16;&#x8F91;&#x5668;(sublime Text),&#x6253;&#x5F00;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;<code>socket_server</code>&#xFF0C;&#x9009;&#x4E2D;<code>package.json</code>&#x6587;&#x4EF6;&#xFF0C;&#x952E;&#x5165;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-json">
+  <span class="hljs-string">&quot;dependencies&quot;</span>: {
+      <span class="hljs-string">&quot;express&quot;</span>: <span class="hljs-string">&quot;*&quot;</span>,
+      <span class="hljs-string">&quot;socket.io&quot;</span>: <span class="hljs-string">&quot;*&quot;</span>
+  }
+</code></pre>
+<blockquote>
+<p>&#x5207;&#x6362;&#x5230;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x952E;&#x5165;</p>
+</blockquote>
+<pre><code class="lang-bash">
+    npm install
+</code></pre>
+<blockquote>
+<p>&#x5B89;&#x8F6C;&#x4F9D;&#x8D56;&#x5B8C;&#x6210;&#x4EE5;&#x540E;&#xFF0C;&#x5207;&#x6362;&#x5230;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x952E;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-javascript">
+    var app = require(&apos;express&apos;)();
+    var http = require(&apos;http&apos;).Server(app);
+    var io = require(&apos;socket.io&apos;)(http);
+
+    app.get(&apos;/&apos;, function(req, res){
+        res.send(&apos;&lt;h1&gt;Welcome to Vincent&apos;Server&lt;/h1&gt;&apos;);
+    });
+
+    //&#x5728;&#x7EBF;&#x7528;&#x6237;
+    var onlineUsers = {};
+    //&#x5F53;&#x524D;&#x5728;&#x7EBF;&#x4EBA;&#x6570;
+    var onlineCount = 0;
+
+    io.on(&apos;connection&apos;, function(socket){
+        console.log(&apos;a user connected&apos;);
+
+        //&#x76D1;&#x542C;&#x65B0;&#x7528;&#x6237;&#x52A0;&#x5165;
+        socket.on(&apos;login&apos;, function(obj){
+            //&#x5C06;&#x65B0;&#x52A0;&#x5165;&#x7528;&#x6237;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x5F53;&#x4F5C;socket&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x540E;&#x9762;&#x9000;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x7528;&#x5230;
+            socket.name = obj.userid;
+
+            //&#x68C0;&#x67E5;&#x5728;&#x7EBF;&#x5217;&#x8868;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5728;&#x91CC;&#x9762;&#x5C31;&#x52A0;&#x5165;
+            if(!onlineUsers.hasOwnProperty(obj.userid)) {
+                onlineUsers[obj.userid] = obj.username;
+                //&#x5728;&#x7EBF;&#x4EBA;&#x6570;+1
+                onlineCount++;
+            }
+
+            //&#x5411;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x5E7F;&#x64AD;&#x7528;&#x6237;&#x52A0;&#x5165;
+            io.emit(&apos;login&apos;, {onlineUsers:onlineUsers, onlineCount:onlineCount, user:obj});
+            console.log(obj.username+&apos;&#x52A0;&#x5165;&#x4E86;&#x804A;&#x5929;&#x5BA4;&apos;);
+        });
+
+        //&#x76D1;&#x542C;&#x7528;&#x6237;&#x9000;&#x51FA;
+        socket.on(&apos;disconnect&apos;, function(){
+            //&#x5C06;&#x9000;&#x51FA;&#x7684;&#x7528;&#x6237;&#x4ECE;&#x5728;&#x7EBF;&#x5217;&#x8868;&#x4E2D;&#x5220;&#x9664;
+            if(onlineUsers.hasOwnProperty(socket.name)) {
+                //&#x9000;&#x51FA;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;
+                var obj = {userid:socket.name, username:onlineUsers[socket.name]};
+
+                //&#x5220;&#x9664;
+                delete onlineUsers[socket.name];
+                //&#x5728;&#x7EBF;&#x4EBA;&#x6570;-1
+                onlineCount--;
+
+                //&#x5411;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x5E7F;&#x64AD;&#x7528;&#x6237;&#x9000;&#x51FA;
+                io.emit(&apos;logout&apos;, {onlineUsers:onlineUsers, onlineCount:onlineCount, user:obj});
+                console.log(obj.username+&apos;&#x9000;&#x51FA;&#x4E86;&#x804A;&#x5929;&#x5BA4;&apos;);
+            }
+        });
+
+        //&#x76D1;&#x542C;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x804A;&#x5929;&#x5185;&#x5BB9;
+        socket.on(&apos;message&apos;, function(obj){
+            //&#x5411;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x5E7F;&#x64AD;&#x53D1;&#x5E03;&#x7684;&#x6D88;&#x606F;
+            io.emit(&apos;message&apos;, obj);
+            console.log(obj.username+&apos;&#x8BF4;&#xFF1A;&apos;+obj.content);
+        });
+
+    });
+
+    http.listen(3000, function(){
+        console.log(&apos;listening on *:3000&apos;);
+    });
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="node_3.html" class="navigation navigation-prev " aria-label="Previous page: Node构建WebSocket服务">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="client.html" class="navigation navigation-next " aria-label="Next page: 客户端">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"socket.io构建WebSocket服务","level":"1.4.3.1","depth":3,"next":{"title":"客户端","level":"1.5","depth":1,"path":"client.md","ref":"client.md","articles":[{"title":"socket.io客户端编程","level":"1.5.1","depth":2,"path":"client_io.md","ref":"client_io.md","articles":[]}]},"previous":{"title":"Node构建WebSocket服务","level":"1.4.3","depth":2,"path":"node_3.md","ref":"node_3.md","articles":[{"title":"socket.io构建WebSocket服务","level":"1.4.3.1","depth":3,"path":"node_4.md","ref":"node_4.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node_4.md","mtime":"2017-05-12T20:40:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-12T20:57:03.696Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
